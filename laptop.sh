@@ -9,6 +9,6 @@ else
 	for current_package in "${packages[@]}"
 	do
 		echo Installing $current_package
-		./$current_package.sh
+		./packages/$current_package.sh
 	done
 fi
