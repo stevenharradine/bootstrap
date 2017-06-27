@@ -6,7 +6,8 @@ apt-get install \
 	python-pip
 
 # AWS CLI
-pip install --upgrade --user awscli
+pip install --upgrade
+            --user awscli
 
 # Ansible dependancy
 pip install boto
