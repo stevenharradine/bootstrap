@@ -2,7 +2,8 @@
 apt-get install \
 	git \
 	golang \
-	ansible
+	ansible \
+	python-pip
 
 # AWS CLI
 pip install --upgrade --user awscli
