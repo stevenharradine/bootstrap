@@ -3,8 +3,8 @@ if [ $(id -u) -ne 0 ]; then
 	echo "Please run as root"
 else
 	apt-get update
-	
-	packages=(base security programing gaming)
+
+	packages=(base security programing gaming communication)
 
 	for current_package in "${packages[@]}"
 	do
