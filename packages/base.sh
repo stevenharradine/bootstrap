@@ -1,7 +1,7 @@
 #!/bin/bash
-apt-get install \
-	htop \
-	silversearcher-ag \
-	curl \
-	net-tools \
-	recordmydesktop
+apt -y install \
+       htop \
+       silversearcher-ag \
+       curl \
+       net-tools \
+       recordmydesktop
