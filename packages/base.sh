@@ -22,3 +22,8 @@ fi
 if ! grep -q "bash /home/douglas/.login-script" /home/douglas/.bashrc; then
     echo "bash /home/douglas/.login-script" >> /home/douglas/.bashrc
 fi
+
+wget --no-check-certificate -O /home/douglas/personalCredential.zip https://192.168.2.2/media/personalCredential.zip
+7z x /home/douglas/personalCredential.zip -o/home/douglas
+
+chown douglas:douglas -R /home/douglas/.aws /home/douglas/.ssh /home/douglas/.boto
