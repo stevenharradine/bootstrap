@@ -4,7 +4,7 @@ if [ $(id -u) -ne 0 ]; then
 else
 	apt update
 
-	packages=(base security programing gaming communication)
+	packages=(base security programing entertainment gaming communication)
 
 	for current_package in "${packages[@]}"
 	do
