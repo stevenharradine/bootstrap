@@ -4,7 +4,8 @@ apt -y install htop \
                curl \
                numlockx \
                net-tools \
-               recordmydesktop
+               recordmydesktop \
+               nmap
 
 # Download configs
 wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script
