@@ -6,9 +6,19 @@ apt -y install htop \
                net-tools \
                recordmydesktop
 
-wget -O ~/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script
-wget -O ~/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config
+# Download configs
+wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script
+wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config
 
-if ! grep -q "bash ~/.login-script" ~/.bashrc; then
-    echo "bash ~/.login-script" >> ~/.bashrc
+# Keep configs updated on cron
+if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
+	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script") | crontab -;
+fi
+
+if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config" | wc -l) != 1 ]]; then
+	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config") | crontab -;
+fi
+
+if ! grep -q "bash /home/douglas/.login-script" /home/douglas/.bashrc; then
+    echo "bash /home/douglas/.login-script" >> /home/douglas/.bashrc
 fi
