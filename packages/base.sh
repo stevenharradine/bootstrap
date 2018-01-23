@@ -7,10 +7,6 @@ apt -y install htop \
                recordmydesktop \
                nmap
 
-# Download configs
-wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script
-wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config
-
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
 	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script") | crontab -;
@@ -26,5 +22,8 @@ fi
 
 wget --no-check-certificate -O /home/douglas/personalCredential.zip https://192.168.2.2/media/personalCredential.zip
 7z x /home/douglas/personalCredential.zip -o/home/douglas
-
 chown douglas:douglas -R /home/douglas/.aws /home/douglas/.ssh /home/douglas/.boto
+
+# Download configs
+wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script
+wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config
