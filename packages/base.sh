@@ -5,7 +5,8 @@ apt -y install htop \
                numlockx \
                net-tools \
                recordmydesktop \
-               nmap
+               nmap \
+	       rdesktop
 
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
