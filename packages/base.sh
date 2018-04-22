@@ -7,7 +7,8 @@ apt -y install htop \
                recordmydesktop \
                nmap \
 	       rdesktop \
-	       pwgen
+	       pwgen \
+               whois
 
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
