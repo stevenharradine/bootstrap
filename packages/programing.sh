@@ -23,3 +23,11 @@ pip install --upgrade
 
 # Ansible dependancy
 pip install boto
+
+# initalize git
+obfuscation="stevenharradine"
+obfuscation=$obfuscation"@"
+obfuscation=$obfuscation"gmail"
+obfuscation=$obfuscation".com"
+git config --global user.email "$obfuscation"
+git config --global user.name "Steven Harradine"
