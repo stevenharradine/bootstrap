@@ -9,7 +9,8 @@ apt -y install htop \
 	       rdesktop \
 	       pwgen \
                whois \
-               chromium-browser
+               chromium-browser \
+	       xserver-xorg-input-synaptics
 
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
