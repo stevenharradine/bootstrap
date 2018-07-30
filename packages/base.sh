@@ -21,8 +21,8 @@ if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.ssh/config https://raw.
 	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config") | crontab -;
 fi
 
-if ! grep -q "bash /home/douglas/.login-script" /home/douglas/.bashrc; then
-    echo "bash /home/douglas/.login-script" >> /home/douglas/.bashrc
+if ! grep -q "source /home/douglas/.login-script" /home/douglas/.bashrc; then
+    echo "source /home/douglas/.login-script" >> /home/douglas/.bashrc
 fi
 
 wget --no-check-certificate -O /home/douglas/personalCredential.zip https://192.168.2.2/media/personalCredential.zip
