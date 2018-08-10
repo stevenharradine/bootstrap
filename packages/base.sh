@@ -6,23 +6,23 @@ apt -y install htop \
                net-tools \
                recordmydesktop \
                nmap \
-	       rdesktop \
-	       pwgen \
+               rdesktop \
+               pwgen \
                whois \
                chromium-browser \
-	       xserver-xorg-input-synaptics
+               xserver-xorg-input-synaptics
 
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
-	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script") | crontab -;
+  cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script") | crontab -;
 fi
 
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config" | wc -l) != 1 ]]; then
-	cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config") | crontab -;
+  cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.ssh/config https://raw.githubusercontent.com/stevenharradine/config/master/.ssh/config") | crontab -;
 fi
 
 if ! grep -q "source /home/douglas/.login-script" /home/douglas/.bashrc; then
-    echo "source /home/douglas/.login-script" >> /home/douglas/.bashrc
+  echo "source /home/douglas/.login-script" >> /home/douglas/.bashrc
 fi
 
 wget --no-check-certificate -O /home/douglas/personalCredential.zip https://192.168.2.2/media/personalCredential.zip

@@ -1,3 +1,2 @@
 #!/bin/bash
-apt -y install \
-       steam-installer
+apt -y install steam-installer
