@@ -9,13 +9,12 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 
 apt update
 
-apt -y install \
-       git \
-       golang \
-       ansible \
-       python-pip \
-       nodejs \
-       sublime-text
+apt -y install git \
+               golang \
+               ansible \
+               python-pip \
+               nodejs \
+               sublime-text
 
 # AWS CLI
 pip install --upgrade
