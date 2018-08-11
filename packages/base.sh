@@ -12,6 +12,11 @@ apt -y install htop \
                chromium-browser \
                xserver-xorg-input-synaptics
 
+curl https://raw.githubusercontent.com/stevenharradine/bashInstaller/master/installer.sh | sudo bash -s program=qBash
+curl https://raw.githubusercontent.com/stevenharradine/bashInstaller/master/installer.sh | sudo bash -s program=extractall
+curl https://raw.githubusercontent.com/stevenharradine/bashInstaller/master/installer.sh | sudo bash -s program=get-ssl-certificate
+curl https://raw.githubusercontent.com/stevenharradine/bashInstaller/master/installer.sh | sudo bash -s program=generate-csr
+
 # Keep configs updated on cron
 if [[ $(crontab -l | grep "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script" | wc -l) != 1 ]]; then
   cat <(crontab -l) <(echo "@daily wget -O /home/douglas/.login-script https://raw.githubusercontent.com/stevenharradine/config/master/.login-script") | crontab -;
