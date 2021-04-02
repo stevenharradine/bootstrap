@@ -4,7 +4,7 @@ apt -y install htop \
                curl \
                numlockx \
                net-tools \
-               recordmydesktop \
+               vokoscreen \
                nmap \
                rdesktop \
                pwgen \
